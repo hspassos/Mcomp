@@ -25,5 +25,5 @@ int	fatorial(int nb)
 
 int	main (void)
 {
-	printf("%d\n", fatorial(10));
+	printf("%d\n", fatorial(5));
 }
