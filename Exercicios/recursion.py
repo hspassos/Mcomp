@@ -1,16 +1,17 @@
 a = [2, 4, 6, 8, 10, 12, 14]
-x = 2
-def binary_search(a, x, l):
-
-    middle = len(a) - 1 - l
-
-    if x == a[middle]:
-        return middle
+x = 12
+def binary_search(a, x, lower):
+    if lower >= len(a):
+        return -1
     else:
-        return binary_search(a, x, l + 1)
-"""    elif x > a[middle]:
-        return mid + 1 + binary_search(a[middle + 1:], x)
-"""
+        middle = lower + (len(a) - 1) // 2
+
+        if a[middle] == x:
+            return middle
+        elif a[middle] < x:
+            return binary_search(a, x, lower + 1)
+        else:
+            return binary_search(a, x, lower - 1)
 def binary_search_wrapper(a, x):
     return binary_search(a, x, 0)
 
